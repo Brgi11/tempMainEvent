@@ -7,8 +7,7 @@ export type LocalizedList = { en: string[]; hr: string[] };
 export type WeddingPackageSectionId =
   | "special-packages"
   | "dj-wedding-packages"
-  | "ceremony-music"
-  | "cocktail-music";
+  | "ceremony-cocktail-music";
 
 export type WeddingDetailBlock = {
   title: LocalizedText;
@@ -54,6 +53,7 @@ export function weddingPackageCardVariant(
 ): WeddingPackageCardVariant {
   if (pkg.isAddon) return "addon";
   if (pkg.sectionId === "special-packages") return "special";
+  if (pkg.sectionId === "ceremony-cocktail-music") return "special";
   if (pkg.sectionId === "dj-wedding-packages") return "dj";
   return "compact";
 }
@@ -78,13 +78,9 @@ const WEDDING_SECTION_LABELS: Record<
     en: "DJ Wedding Package",
     hr: "DJ paket za vjenčanje",
   },
-  "ceremony-music": {
-    en: "Ceremony Music",
-    hr: "Glazba za ceremoniju",
-  },
-  "cocktail-music": {
-    en: "Cocktail Music",
-    hr: "Glazba za koktel",
+  "ceremony-cocktail-music": {
+    en: "Ceremony and Cocktail Music",
+    hr: "Glazba za ceremoniju i koktel",
   },
 };
 

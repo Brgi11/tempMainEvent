@@ -1,5 +1,4 @@
-import { CEREMONY_WEDDING_PACKAGES } from "./ceremony";
-import { COCKTAIL_WEDDING_PACKAGES } from "./cocktail";
+import { CEREMONY_COCKTAIL_WEDDING_PACKAGES } from "./ceremony-cocktail";
 import { DJ_WEDDING_PACKAGES } from "./dj";
 import { SPECIAL_WEDDING_PACKAGES } from "./special";
 import type { WeddingPackage, WeddingPackageSectionId } from "../types";
@@ -7,8 +6,7 @@ import type { WeddingPackage, WeddingPackageSectionId } from "../types";
 export const ALL_WEDDING_PACKAGES: WeddingPackage[] = [
   ...SPECIAL_WEDDING_PACKAGES,
   ...DJ_WEDDING_PACKAGES,
-  ...CEREMONY_WEDDING_PACKAGES,
-  ...COCKTAIL_WEDDING_PACKAGES,
+  ...CEREMONY_COCKTAIL_WEDDING_PACKAGES,
 ];
 
 export function getWeddingPackageBySlug(
@@ -45,8 +43,8 @@ const HOME_FEATURED_WEDDING_SLUGS = [
   "blkn-excess",
   "signature-package",
   "premium-package",
-  "ceremony-vocal-piano",
-  "ceremony-kapa-luse",
+  "due-ricce",
+  "solo-instrumentalist",
 ] as const;
 
 export function getHomeFeaturedWeddingPackages(): WeddingPackage[] {

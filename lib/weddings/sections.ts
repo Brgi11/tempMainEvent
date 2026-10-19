@@ -16,17 +16,10 @@ export const WEDDING_SECTIONS: WeddingSection[] = [
     },
   },
   {
-    id: "ceremony-music",
+    id: "ceremony-cocktail-music",
     title: {
-      en: "Ceremony Music",
-      hr: "Glazba za ceremoniju",
-    },
-  },
-  {
-    id: "cocktail-music",
-    title: {
-      en: "Cocktail Music",
-      hr: "Glazba za koktel",
+      en: "Ceremony and Cocktail Music",
+      hr: "Glazba za ceremoniju i koktel",
     },
   },
 ];

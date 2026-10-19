@@ -328,6 +328,7 @@ header.top-weddings-hero .hamburger {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   display: block;
   filter: grayscale(0%);
   opacity: 1;
@@ -416,11 +417,24 @@ header.top-weddings-hero .hamburger {
   border-style: dashed;
   border-color: rgba(144, 122, 97, 0.45);
   background: rgba(144, 122, 97, 0.04);
+  overflow: hidden;
+}
+
+.wedding-package-card--addon .wedding-package-card-image-wrap {
+  width: min(220px, 32%);
+  flex-shrink: 0;
+  aspect-ratio: auto;
+  min-height: 100%;
+}
+
+.wedding-package-card--addon .wedding-package-card-image {
+  object-position: center 18%;
 }
 
 .wedding-package-card--addon .wedding-package-card-body {
   padding: 1.25rem 1.5rem;
   gap: 0.4rem;
+  min-width: 0;
 }
 
 .wedding-package-card-addon-label {
@@ -633,6 +647,18 @@ header.top-weddings-hero .hamburger {
 }
 
 /* Small tablet / large phone – horizontal scroll per section */
+@media (max-width: 900px) and (min-width: 769px) {
+  .wedding-package-card--addon {
+    flex-direction: column;
+  }
+
+  .wedding-package-card--addon .wedding-package-card-image-wrap {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
 @media (max-width: 768px) {
   .weddings-section-title {
     font-size: clamp(1.35rem, 4.5vw, 1.65rem);
@@ -701,6 +727,12 @@ header.top-weddings-hero .hamburger {
     width: min(86vw, 310px);
     flex-direction: column;
     grid-column: auto;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--addon .wedding-package-card-image-wrap {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .weddings-scroll-wrapper .wedding-package-card--compact {

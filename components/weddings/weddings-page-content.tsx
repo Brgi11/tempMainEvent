@@ -35,7 +35,7 @@ function SectionGrid({
 
   if (mainPackages.length === 0 && addons.length === 0) return null;
 
-  if (sectionId === "special-packages") {
+  if (sectionId === "special-packages" || sectionId === "ceremony-cocktail-music") {
     return (
       <div className="weddings-scroll-wrapper">
         <div className="weddings-packages-grid weddings-packages-grid--special weddings-packages-track">

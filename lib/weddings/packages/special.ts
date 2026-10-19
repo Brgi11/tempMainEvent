@@ -1,7 +1,4 @@
-import {
-  WEDDING_PACKAGE_IMAGES,
-  WEDDING_PACKAGE_PLACEHOLDER_IMAGE,
-} from "../constants";
+import { WEDDING_PACKAGE_IMAGES } from "../constants";
 import type { WeddingPackage } from "../types";
 
 export const SPECIAL_WEDDING_PACKAGES: WeddingPackage[] = [
@@ -19,7 +16,7 @@ export const SPECIAL_WEDDING_PACKAGES: WeddingPackage[] = [
       hr: "House, disco, pop i urban stilizirana hrvatska i međunarodna vjenčanja.",
     },
     priceLabel: { en: "Start from €3750", hr: "Od €3750" },
-    imageUrl: WEDDING_PACKAGE_PLACEHOLDER_IMAGE,
+    imageUrl: WEDDING_PACKAGE_IMAGES.fjokCollective,
     socialLinks: {
       instagram: "https://www.instagram.com/fjok_collective/?hl=en",
     },

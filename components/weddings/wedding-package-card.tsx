@@ -43,7 +43,9 @@ export function WeddingPackageCard({ pkg, lang, variant }: Props) {
 
   return (
     <Link href={`/weddings/${pkg.slug}`} className={className} scroll>
-      {resolvedVariant === "special" || resolvedVariant === "compact" ? (
+      {resolvedVariant === "special" ||
+      resolvedVariant === "compact" ||
+      resolvedVariant === "addon" ? (
         <div className="wedding-package-card-image-wrap">
           <img
             src={pkg.imageUrl}
