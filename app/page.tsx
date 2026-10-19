@@ -1,0 +1,29 @@
+import { ContactSection } from "@/components/sections/contact-section";
+import { HeroSection } from "@/components/sections/hero-section";
+import { JournalHomeSection } from "@/components/sections/journal-home-section";
+import { PartnersSection } from "@/components/sections/partners-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { WeddingsHomeSection } from "@/components/sections/weddings-home-section";
+import { getAllJournalPosts, postToJournalCardModel } from "@/lib/data/posts";
+import "@/styles/hero.css";
+import "@/styles/weddings-home.css";
+import "@/styles/testimonials.css";
+import "@/styles/contact.css";
+import "@/styles/partners.css";
+import "@/styles/journal-page.css";
+
+export default async function HomePage() {
+  const journalWp = await getAllJournalPosts(300);
+  const journalCards = journalWp.map(postToJournalCardModel);
+
+  return (
+    <>
+      <HeroSection />
+      <WeddingsHomeSection />
+      <TestimonialsSection />
+      <JournalHomeSection posts={journalCards} mode="home" />
+      <ContactSection />
+      <PartnersSection />
+    </>
+  );
+}

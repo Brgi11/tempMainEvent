@@ -1,0 +1,45 @@
+@import "../styles/header.css";
+@import "../styles/footer.css";
+
+:root {
+  --site-content-max: 1200px;
+  /* Matches fixed nav: 22px + logo + 22px padding */
+  --site-header-height: 124px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --site-header-height: 104px;
+  }
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Utility: optional alignment for CMS HTML blocks */
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+main.site-main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Offset fixed header on all routes except home (hero sits under the bar) */
+body.inner-page main.site-main {
+  padding-top: var(--site-header-height);
+}
+
+/* Weddings landing hero sits under the transparent header (same as home) */
+main.site-main:has(.weddings-hero) {
+  padding-top: 0;
+}

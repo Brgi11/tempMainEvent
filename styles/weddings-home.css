@@ -1,0 +1,294 @@
+/* Home page — weddings showcase (journal-style polaroid cards) */
+
+.wh-section {
+  padding: clamp(4rem, 9vw, 6.5rem) clamp(1rem, 4vw, 2rem);
+  background-color: #f1ede9;
+  border-top: 1px solid rgba(144, 122, 97, 0.2);
+}
+
+.wh-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+}
+
+/* ─── Header ─── */
+
+.wh-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
+}
+
+.wh-title {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2.25rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1f201b;
+  margin: 0 0 0.85rem;
+}
+
+.wh-subtitle {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #1f201b;
+  opacity: 0.82;
+  margin: 0;
+  max-width: 36rem;
+}
+
+.wh-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  font-family: "EB Garamond", serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1f201b;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(31, 32, 27, 0.35);
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.wh-explore:hover {
+  border-color: #1f201b;
+  opacity: 0.85;
+}
+
+.wh-explore-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.wh-explore:hover .wh-explore-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Horizontal scroll track ─── */
+
+.wh-scroll {
+  margin: 0 calc(-1 * clamp(0.5rem, 2vw, 1rem));
+  padding: 0 clamp(0.5rem, 2vw, 1rem) 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: clamp(0.5rem, 2vw, 1rem);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(31, 32, 27, 0.25) transparent;
+}
+
+.wh-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.wh-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wh-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(31, 32, 27, 0.25);
+  border-radius: 0;
+}
+
+.wh-grid {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  width: max-content;
+}
+
+/* ─── Cards (journal-style + polaroid frame) ─── */
+
+.wh-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 0 0 auto;
+  width: min(340px, 86vw);
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  background-color: transparent;
+  scroll-snap-align: start;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+@media (hover: hover) {
+  .wh-card:hover {
+    border-color: rgba(144, 122, 97, 0.65);
+    transform: translateY(-2px);
+  }
+}
+
+/* White polaroid mat — extra padding at bottom */
+.wh-card-polaroid {
+  background-color: #faf8f5;
+  box-shadow: 0 2px 10px rgba(31, 32, 27, 0.07);
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .wh-card:hover .wh-card-polaroid {
+    transform: scale(1.01);
+  }
+}
+
+.wh-card-frame {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #1f201b;
+}
+
+.wh-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0%);
+  transition: filter 0.45s ease, transform 0.35s ease;
+}
+
+@media (hover: hover) {
+  .wh-card:hover .wh-card-img {
+    filter: grayscale(100%);
+    transform: scale(1.03);
+  }
+}
+
+.wh-card-price {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  font-family: "EB Garamond", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #f1ede9;
+  background-color: rgba(31, 32, 27, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.wh-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.45rem;
+  min-height: 10.5rem;
+  padding: 0 0.15rem 0.25rem;
+  box-sizing: border-box;
+}
+
+.wh-card-category {
+  font-family: "EB Garamond", serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #907a61;
+}
+
+.wh-card-name {
+  font-family: "EB Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1f201b;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.wh-card-desc {
+  font-family: "EB Garamond", serif;
+  font-size: 0.98rem;
+  line-height: 1.58;
+  color: #1f201b;
+  opacity: 0.8;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wh-card-link {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-family: "EB Garamond", serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #1f201b;
+  opacity: 0.55;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 2px;
+  transition: opacity 0.25s ease;
+}
+
+.wh-card-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+@media (hover: hover) {
+  .wh-card:hover .wh-card-link {
+    opacity: 1;
+  }
+
+  .wh-card:hover .wh-card-link::after {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .wh-card {
+    width: 360px;
+  }
+
+  .wh-card-frame {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wh-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wh-card {
+    width: min(320px, 88vw);
+  }
+
+  .wh-card-frame {
+    height: 280px;
+  }
+}

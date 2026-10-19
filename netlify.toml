@@ -1,0 +1,11 @@
+# This file lives at the repo root when you push only the frontend/ folder.
+# Set variables in Netlify → Environment variables (not .env.local), then redeploy.
+#
+# Artists / WPGraphQL: NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL or WORDPRESS_GRAPHQL_URL, WORDPRESS_URL
+# Contact forms: NEXT_PUBLIC_WORDPRESS_URL, NEXT_PUBLIC_CF7_UNIT_TAG, NEXT_PUBLIC_CF7_FORM_POST_ID
+
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

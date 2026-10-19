@@ -1,0 +1,797 @@
+/* Weddings page – hero + package sections */
+
+.weddings-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 6rem max(2rem, env(safe-area-inset-right, 0px))
+    max(2rem, env(safe-area-inset-bottom, 0px))
+    max(2rem, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+  background-color: #1f201b;
+  background-image: var(--weddings-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.weddings-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Weddings hero: dark nav on transparent header (readable over light sky) */
+header.top-weddings-hero {
+  background: linear-gradient(
+    180deg,
+    rgba(31, 32, 27, 0.16) 0%,
+    rgba(31, 32, 27, 0.1) 28%,
+    rgba(31, 32, 27, 0.055) 52%,
+    rgba(31, 32, 27, 0.025) 72%,
+    rgba(31, 32, 27, 0.008) 88%,
+    transparent 100%
+  );
+}
+
+header.top-weddings-hero .logo-light {
+  display: none;
+}
+
+header.top-weddings-hero .logo-dark {
+  display: block;
+}
+
+header.top-weddings-hero .menu a,
+header.top-weddings-hero .menu button {
+  color: #1f201b;
+}
+
+header.top-weddings-hero .menu a::after,
+header.top-weddings-hero .menu button::after {
+  background-color: #1f201b;
+}
+
+header.top-weddings-hero .menu-item .arrow {
+  border-top-color: #1f201b;
+}
+
+header.top-weddings-hero .menu-item:hover .arrow {
+  border-top-color: rgba(31, 32, 27, 0.75);
+}
+
+header.top-weddings-hero .language-switch {
+  border-left-color: rgba(31, 32, 27, 0.18);
+}
+
+header.top-weddings-hero .menu .lang-button:not(.active) {
+  color: #907a61;
+}
+
+header.top-weddings-hero .menu .lang-button.active {
+  color: #1f201b;
+}
+
+header.top-weddings-hero .lang-separator {
+  color: #907a61;
+}
+
+header.top-weddings-hero .hamburger {
+  color: #1f201b;
+}
+
+@media (max-width: 900px) {
+  header.top.top-weddings-hero:not(.scrolled) {
+    background: transparent;
+    backdrop-filter: none;
+  }
+}
+
+.weddings-hero-description--short {
+  display: none;
+}
+
+.weddings-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.25rem;
+}
+
+.weddings-hero-title {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 600;
+  color: #c0b5ac;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 22ch;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+.weddings-hero-description {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 400;
+  color: #c0b5ac;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 42rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+.weddings-hero-cta {
+  display: inline-block;
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+  padding-bottom: 2px;
+  position: relative;
+  width: fit-content;
+  margin-top: 0.5rem;
+  border: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.weddings-hero-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: width 0.3s ease;
+}
+
+.weddings-hero-cta:hover {
+  color: #fff;
+  opacity: 1;
+  background: transparent;
+}
+
+.weddings-hero-cta:hover::after {
+  width: 100%;
+}
+
+/* Listing area – light editorial background */
+.weddings-packages-section.artists-page-section {
+  padding: clamp(3.5rem, 8vw, 5rem)
+    max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-right, 0px))
+    clamp(4rem, 9vw, 6rem)
+    max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-left, 0px));
+  min-height: 0;
+}
+
+.weddings-packages-section {
+  background-color: #f1ede9;
+}
+
+.weddings-package-section {
+  scroll-margin-top: calc(var(--site-header-height, 72px) + 1.25rem);
+  margin-bottom: 4.5rem;
+}
+
+.weddings-package-section:last-child {
+  margin-bottom: 0;
+}
+
+.weddings-package-section--divider {
+  padding-top: 4.5rem;
+  border-top: 1px solid rgba(144, 122, 97, 0.18);
+}
+
+.weddings-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.weddings-section-title {
+  font-family: "EB Garamond", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Grids per section */
+.weddings-packages-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.weddings-packages-grid--special {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.weddings-packages-grid--dj {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Add-on sits on its own full-width row below the 3 DJ cards (desktop) */
+.weddings-packages-track--dj > .wedding-package-card--addon {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+}
+
+.weddings-packages-grid--compact {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.weddings-dj-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.weddings-addon-row {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Horizontal scroll tracks (mobile) */
+.weddings-scroll-wrapper {
+  width: 100%;
+}
+
+.weddings-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.weddings-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.weddings-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(31, 32, 27, 0.25);
+  border-radius: 0;
+}
+
+/* Shared card base */
+.wedding-package-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 0;
+}
+
+@media (hover: hover) {
+  .wedding-package-card:hover {
+    border-color: rgba(144, 122, 97, 0.65);
+  }
+}
+
+.wedding-package-card:active {
+  border-color: rgba(144, 122, 97, 0.75);
+  background-color: rgba(144, 122, 97, 0.03);
+}
+
+.wedding-package-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* Special packages – image on top */
+.wedding-package-card--special {
+  padding: 0;
+  overflow: hidden;
+}
+
+.wedding-package-card--special .wedding-package-card-body {
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.wedding-package-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #1f201b;
+}
+
+.wedding-package-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .wedding-package-card--special:hover .wedding-package-card-image,
+  .wedding-package-card--compact:hover .wedding-package-card-image {
+    filter: grayscale(100%);
+    opacity: 0.92;
+    transform: scale(1.02);
+  }
+
+  .wedding-package-card--addon:hover {
+    border-color: rgba(144, 122, 97, 0.7);
+    background: rgba(144, 122, 97, 0.07);
+  }
+
+  .wedding-package-card:hover .wedding-package-card-cta {
+    opacity: 1;
+    gap: 0.55rem;
+  }
+
+  .wedding-package-card:hover .wedding-package-card-cta-text::after {
+    width: 100%;
+  }
+
+  .wedding-package-card:hover .wedding-package-card-cta-arrow {
+    transform: translateX(3px);
+  }
+}
+
+/* DJ packages – compact text cards */
+.wedding-package-card--dj {
+  padding: 1.35rem 1.35rem 1.25rem;
+  min-height: 100%;
+}
+
+.wedding-package-card--dj .wedding-package-card-title {
+  font-size: 1.2rem;
+}
+
+.wedding-package-card--dj .wedding-package-card-description {
+  flex: 1;
+}
+
+.wedding-package-card-price--inline {
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+/* Compact ceremony / cocktail cards */
+.wedding-package-card--compact {
+  padding: 0;
+  overflow: hidden;
+}
+
+.wedding-package-card--compact .wedding-package-card-image-wrap {
+  aspect-ratio: 1 / 1;
+}
+
+.wedding-package-card--compact .wedding-package-card-body {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.wedding-package-card--compact .wedding-package-card-title {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.wedding-package-card--compact .wedding-package-card-description {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Add-on card – secondary, horizontal feel */
+.wedding-package-card--addon {
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0;
+  border-style: dashed;
+  border-color: rgba(144, 122, 97, 0.45);
+  background: rgba(144, 122, 97, 0.04);
+}
+
+.wedding-package-card--addon .wedding-package-card-body {
+  padding: 1.25rem 1.5rem;
+  gap: 0.4rem;
+}
+
+.wedding-package-card-addon-label {
+  font-family: "EB Garamond", serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #907a61;
+  margin: 0;
+}
+
+.wedding-package-card-addon-note {
+  font-family: "EB Garamond", serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wedding-package-card--addon .wedding-package-card-title {
+  font-size: 1.15rem;
+}
+
+/* Card typography */
+.wedding-package-card-price {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #907a61;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.wedding-package-card-title {
+  font-family: "EB Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.wedding-package-card-description {
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.88;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.wedding-package-card-best-for {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wedding-package-card-label {
+  font-weight: 600;
+  color: #907a61;
+}
+
+/* Arrow CTA */
+.wedding-package-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, gap 0.25s ease;
+}
+
+.wedding-package-card-cta-text {
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.wedding-package-card-cta-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+.wedding-package-card-cta-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+@media (hover: none) {
+  .wedding-package-card-cta {
+    opacity: 1;
+  }
+}
+
+/* Listing card category label */
+.wedding-package-category {
+  font-family: "EB Garamond", serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #907a61;
+  margin: 0;
+}
+
+/* ─── Responsive ─── */
+
+/* Large tablet: tighten grids */
+@media (max-width: 1100px) {
+  .weddings-packages-grid--dj {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weddings-packages-grid--compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet & mobile hero */
+@media (max-width: 900px) {
+  .weddings-hero {
+    padding: 0;
+    min-height: 100dvh;
+    min-height: 100svh;
+    margin-top: calc(-1 * var(--site-header-height, 104px));
+    align-items: stretch;
+    justify-content: flex-end;
+    background-position: center top;
+  }
+
+  .weddings-hero::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.35) 38%,
+      rgba(0, 0, 0, 0.72) 72%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  .weddings-hero-inner {
+    margin-top: auto;
+    gap: 0.85rem;
+    padding: 1.25rem clamp(1.15rem, 4vw, 1.75rem) clamp(1.75rem, 5vw, 2.25rem);
+    border-top: 1px solid rgba(192, 181, 172, 0.22);
+    background: linear-gradient(
+      180deg,
+      rgba(31, 32, 27, 0.52) 0%,
+      rgba(31, 32, 27, 0.82) 100%
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .weddings-hero-title {
+    max-width: none;
+    font-size: clamp(1.75rem, 7vw, 2.35rem);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+  }
+
+  .weddings-hero-description--full {
+    display: none;
+  }
+
+  .weddings-hero-description--short {
+    display: block;
+  }
+
+  .weddings-hero-description {
+    max-width: none;
+    font-size: clamp(0.98rem, 3.6vw, 1.1rem);
+    line-height: 1.55;
+    opacity: 0.92;
+  }
+
+  .weddings-hero-cta {
+    margin-top: 0.65rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .weddings-hero-cta::after {
+    bottom: 2px;
+  }
+}
+
+/* Small tablet / large phone – horizontal scroll per section */
+@media (max-width: 768px) {
+  .weddings-section-title {
+    font-size: clamp(1.35rem, 4.5vw, 1.65rem);
+  }
+
+  .weddings-section-header {
+    margin-bottom: 1.35rem;
+  }
+
+  .weddings-package-section {
+    margin-bottom: clamp(2.5rem, 7vw, 3.5rem);
+  }
+
+  .weddings-package-section--divider {
+    padding-top: clamp(2.5rem, 7vw, 3.5rem);
+  }
+
+  .weddings-scroll-wrapper {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(31, 32, 27, 0.3) transparent;
+    padding-bottom: 0.75rem;
+  }
+
+  .weddings-scroll-wrapper .weddings-packages-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: max-content;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--special {
+    width: min(82vw, 300px);
+    flex-direction: column;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--special .wedding-package-card-image-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--special .wedding-package-card-body {
+    padding: 1.1rem 1.15rem 1.2rem;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--dj {
+    width: min(76vw, 268px);
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--addon {
+    width: min(86vw, 310px);
+    flex-direction: column;
+    grid-column: auto;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--compact {
+    width: min(70vw, 230px);
+    flex-direction: column;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--compact .wedding-package-card-image-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--compact .wedding-package-card-body {
+    padding: 0.9rem 1rem 1rem;
+    min-width: 0;
+  }
+
+  .weddings-scroll-wrapper .wedding-package-card--compact .wedding-package-card-description {
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+  }
+
+  .wedding-package-card--dj {
+    padding: 1.2rem 1.25rem 1.15rem;
+  }
+
+  .wedding-package-card--addon .wedding-package-card-body {
+    padding: 1.1rem 1.2rem 1.2rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 520px) {
+  .weddings-hero {
+    min-height: 100dvh;
+    min-height: 100svh;
+    background-position: center top;
+  }
+
+  .weddings-hero-inner {
+    padding: 1rem 1rem 1.5rem;
+    gap: 0.7rem;
+  }
+
+  .weddings-hero-title {
+    font-size: clamp(1.55rem, 8.2vw, 1.95rem);
+  }
+
+  .weddings-hero-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .weddings-hero-cta {
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 0.85rem 1rem;
+    color: #f1ede9;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .weddings-hero-cta::after {
+    display: none;
+  }
+
+  .weddings-hero-cta:active {
+    background: rgba(241, 237, 233, 0.12);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+
+  @media (hover: hover) {
+    .weddings-hero-cta:hover {
+      background: rgba(241, 237, 233, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .wedding-package-card-cta {
+    margin-top: 0.5rem;
+    min-height: 36px;
+    align-items: center;
+  }
+}
+
+/* DJ row: third card full width when 2-col grid (desktop/tablet only) */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .weddings-scroll-wrapper .weddings-packages-grid--dj .wedding-package-card--dj:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
