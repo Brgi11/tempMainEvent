@@ -62,7 +62,7 @@ export function WeddingPackageCard({ pkg, lang, variant }: Props) {
           </p>
         ) : null}
 
-        {resolvedVariant !== "addon" ? (
+        {resolvedVariant !== "addon" && resolvedVariant !== "dj" ? (
           <p className="wedding-package-card-price">{price}</p>
         ) : null}
 

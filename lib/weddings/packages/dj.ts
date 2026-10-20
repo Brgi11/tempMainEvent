@@ -15,7 +15,7 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Wedding after parties, combination with a live band.",
       hr: "After party vjenčanja, kombinacija s live bendom.",
     },
-    priceLabel: { en: "From €1500", hr: "Od €1500" },
+    priceLabel: { en: "Start from €1500", hr: "Od €1500" },
     imageUrl: WEDDING_PACKAGE_IMAGES.essential,
     detail: {
       intro: {
@@ -159,7 +159,7 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Weddings who want a festival party experience.",
       hr: "Vjenčanja koja žele festival party iskustvo.",
     },
-    priceLabel: { en: "From €2500", hr: "Od €2500" },
+    priceLabel: { en: "Start from €2500", hr: "Od €2500" },
     imageUrl: WEDDING_PACKAGE_IMAGES.premium,
     detail: {
       intro: {

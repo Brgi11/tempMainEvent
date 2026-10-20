@@ -24,7 +24,7 @@ export function WeddingsHomeSection() {
             <p className="wh-subtitle">
               {isHr
                 ? "Otkrijte naše vjenčane pakete koji pokrivaju svaki dio vašeg dana — od ceremonije i cocktail sata do večere i recepcije."
-                : "Discover our wedding packages, covering every part of your day. From the ceremony and cocktail hour to dinner and the reception."}
+                : "Discover our wedding packages, thoughtfully designed to bring every part of your day together, from the ceremony and cocktail hour to dinner and the party."}
             </p>
           </div>
           <Link href="/weddings" className="wh-explore">

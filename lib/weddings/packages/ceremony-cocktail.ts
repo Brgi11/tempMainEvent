@@ -19,7 +19,7 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
     imageUrl: WEDDING_PACKAGE_IMAGES.dueRicce,
     detail: {
       intro: {
-        en: "Timeless live music for your wedding ceremony and cocktail hour, performed by Due Ricce — an elegant piano and violin duo dedicated to creating a truly emotional and refined atmosphere. Their repertoire can be tailored to your preferences, bringing warmth, sophistication, and a cinematic quality to the most meaningful moments of your day.",
+        en: "Timeless live music for your wedding ceremony and cocktail hour, performed by Due Ricce, an elegant piano and violin duo dedicated to creating a truly emotional and refined atmosphere. Their repertoire can be tailored to your preferences, bringing warmth, sophistication, and a cinematic quality to the most meaningful moments of your day.",
         hr: "Bezvremenska live glazba za vašu vjenčanu ceremoniju i cocktail sat u izvedbi Due Ricce, elegantnog dueta klavira i violine posvećenog stvaranju emotivne i profinjene atmosfere. Repertoar se prilagođava vašim željama i donosi toplinu, sofisticiranost i filmsku kvalitetu najvažnijim trenucima dana.",
       },
       blocks: [

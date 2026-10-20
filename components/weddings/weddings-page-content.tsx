@@ -110,12 +110,12 @@ export function WeddingsPageContent() {
           <p className="weddings-hero-description weddings-hero-description--full">
             {isHr
               ? "Otkrijte naše vjenčane pakete koji pokrivaju svaki dio vašeg dana — od ceremonije i cocktail sata do večere i recepcije."
-              : "Discover our wedding packages, covering every part of your day. From the ceremony and cocktail hour to dinner and the reception."}
+              : "Discover our wedding packages, thoughtfully designed to bring every part of your day together, from the ceremony and cocktail hour to dinner and the party."}
           </p>
           <p className="weddings-hero-description weddings-hero-description--short">
             {isHr
               ? "Otkrijte naše vjenčane pakete koji pokrivaju svaki dio vašeg dana — od ceremonije i cocktail sata do večere i recepcije."
-              : "Discover our wedding packages, covering every part of your day. From the ceremony and cocktail hour to dinner and the reception."}
+              : "Discover our wedding packages, thoughtfully designed to bring every part of your day together, from the ceremony and cocktail hour to dinner and the party."}
           </p>
           <Link href="#weddings-packages" className="weddings-hero-cta" scroll>
             {isHr ? "ISTRAŽITE PAKETE" : "EXPLORE PACKAGES"}
