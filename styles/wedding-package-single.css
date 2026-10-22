@@ -245,15 +245,6 @@ body:not(.inner-page) .wv {
   min-width: 0;
 }
 
-.wv-chapter--included .wv-chapter-title {
-  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #907a61;
-  margin-bottom: 1.35rem;
-}
-
 .wv-chapter-num {
   font-family: "EB Garamond", serif;
   font-size: clamp(2rem, 3.5vw, 2.75rem);
@@ -267,11 +258,12 @@ body:not(.inner-page) .wv {
 
 .wv-chapter-title {
   font-family: "EB Garamond", serif;
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #1f201b;
-  margin: 0 0 1.15rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #907a61;
+  margin: 0 0 1.35rem;
 }
 
 .wv-chapter-list {
@@ -401,7 +393,7 @@ body:not(.inner-page) .wv {
     gap: 0.75rem 1.25rem;
   }
 
-  .wv-chapter--included .wv-chapter-title {
+  .wv-chapter-title {
     letter-spacing: 0.16em;
   }
 

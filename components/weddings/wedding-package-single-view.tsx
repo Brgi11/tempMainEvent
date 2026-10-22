@@ -74,13 +74,10 @@ export function WeddingPackageSingleView({ pkg }: Props) {
 
           {pkg.detail.blocks.map((block, i) => {
             const blockTitle = t(block.title, lang);
-            const isIncludedPerformance =
-              blockTitle.toLowerCase() === "included performance" ||
-              blockTitle.toLowerCase() === "uključena izvedba";
             return (
             <div
               key={i}
-              className={`wv-chapter${showChapterNumbers ? "" : " wv-chapter--solo"}${isIncludedPerformance ? " wv-chapter--included" : ""}`}
+              className={`wv-chapter${showChapterNumbers ? "" : " wv-chapter--solo"}`}
             >
               {showChapterNumbers ? (
                 <span className="wv-chapter-num" aria-hidden>
