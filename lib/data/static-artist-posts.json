@@ -1,0 +1,446 @@
+[
+  {
+    "slug": "mirko-from-fjok",
+    "title": "Mirko from Fjok",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Mirko from Fjok",
+      "bioEn": "<p>Mirko is a charismatic open-format DJ with years of experience in the premium event industry across Croatia. He's a core member of <strong>Fjok Collective</strong> and one of the most-booked DJs for destination weddings in Split, Hvar, and the wider Dalmatian coast.</p>\n<h3>Style and approach</h3>\n<p>Working in true open format, Mirko builds fresh musical sets from a wide repertoire rooted in funk, disco, house, and dance music across eras. No fixed playlist, no copy-paste setlist. Every event gets its own arc, shaped live around the room.</p>\n<p>His background in software product management gave him an analytical edge that most DJs don't have. He reads the dancefloor the way a product manager reads users, methodically, in real time, and adjusts before the energy dips.</p>\n<h3>Best suited for</h3>\n<ul>\n<li><strong>Destination weddings</strong> in Split, Hvar, Vis, Brač and across Dalmatia</li>\n<li><strong>Private celebrations</strong> with international guests</li>\n<li><strong>Corporate events</strong> and brand activations</li>\n<li><strong>Yacht parties</strong> and high-end private gatherings</li>\n</ul>\n<p>His sets work especially well for crowds with diverse musical tastes, the kind of mix that turns up at international weddings on the Adriatic.</p>\n<h3>Outside the booth</h3>\n<p>When he's not behind the decks, Mirko enjoys cooking, listening to full albums from start to finish, and long coffees by the sea. The same patience and attention shows up in his sets.</p>\n",
+      "bioHr": "<p>Mirko je karizmatičan open-format DJ s godinama iskustva u premium event industriji diljem Hrvatske. Član je <strong>Fjok Collectivea</strong> i jedan od najtraženijih DJ-eva za destination vjenčanja u Splitu, Hvaru i šire Dalmacije.</p>\n<h3>Stil i pristup</h3>\n<p>Radi u pravom open formatu, gradi setove iz širokog repertoara koji obuhvaća funk, disco, house i dance glazbu kroz različite ere. Bez fiksne playliste, bez copy-paste setlista. Svaki događaj dobiva svoj luk, oblikovan uživo prema atmosferi u prostoru.</p>\n<p>Iskustvo iz product managementa u softveru dalo mu je analitičku oštrinu koju većina DJ-eva nema. Plesni podij čita kao što product manager čita korisnike, metodično, u realnom vremenu, i prilagođava prije nego što energija padne.</p>\n<h3>Najbolji za</h3>\n<ul>\n<li><strong>Destination vjenčanja</strong> u Splitu, na Hvaru, Visu, Braču i diljem Dalmacije</li>\n<li><strong>Privatne proslave</strong> s međunarodnim gostima</li>\n<li><strong>Korporativne događaje</strong> i brand aktivacije</li>\n<li><strong>Tulume na jahtama</strong> i ekskluzivna privatna okupljanja</li>\n</ul>\n<p>Njegovi setovi posebno funkcioniraju za publike s različitim glazbenim ukusima, baš kakve se okupljaju na međunarodnim vjenčanjima na Jadranu.</p>\n<h3>Izvan booka</h3>\n<p>Kad nije za pultom, Mirko voli kuhati, slušati cijele albume od početka do kraja i pijuckati kavu uz more. Ista strpljivost i pažnja vidi se u njegovim setovima.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party",
+        "Lounge"
+      ],
+      "hoverPreviewEn": "Open-format DJ delivering a wide musical range and confident crowd reading.",
+      "hoverPreviewHr": "Open-format DJ sa širokim glazbenim rasponom i sigurnim osjećajem za publiku.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Mirko-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Mirko-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "jerry-dollan",
+    "title": "Jerry Dollan",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Jerry Dollan",
+      "bioEn": "<p>Jerry is a DJ recognised for technical skill and creative mixing.<br />\nHis transitions are precise and inventive, keeping sets engaging and dynamic.</p>\n<p>With a background in techno, he brings advanced technique into open-format DJing, moving confidently between styles while maintaining structure.<br />\nHe performs across weddings, private celebrations, and corporate events, dancing his legs off together with the audience.</p>\n<p>Highly attentive to presentation, Jerry places equal importance on sound, visuals, and overall setup.</p>\n",
+      "bioHr": "<p>Jerry je DJ poznat po tehničkoj preciznosti i kreativnom miksanju.<br />\nNjegovi prijelazi su promišljeni i dinamični, stvarajući zanimljive, povezane setove.</p>\n<p>S iskustvom u techno glazbi, open-format DJingu pristupa naprednim tehnikama, miješajući glazbene stilove na način koji zadržava strukturu i ritam svakog seta.<br />\nNastupa na vjenčanjima, privatnim i korporativnim eventima, plešući do iznemoglosti skupa s publikom.</p>\n<p>Posebnu pažnju posvećuje vizualnim detaljima, i ukupnom dojmu opreme i nastupa.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party",
+        "Lounge"
+      ],
+      "hoverPreviewEn": "Technically creative DJ with a sharp ear for detail and presentation.",
+      "hoverPreviewHr": "Kreativan DJ s izraženim osjećajem za detalje i prezentaciju.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Jerry-Dollan-1-scaled.jpg",
+      "image2": null,
+      "image3": null
+    }
+  },
+  {
+    "slug": "jelena",
+    "title": "Jelena",
+    "tags": {
+      "nodes": [
+        {
+          "name": "Pianist"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Jelena",
+      "bioEn": "<p>Jelena is a classically trained pianist with extensive experience in ceremonies and formal events.<br />\nHer performances are precise, calm, and designed to support the atmosphere.</p>\n<p>In addition to ceremonies, she regularly performs during dinners and receptions.<br />\nShe enjoys adapting new music and learning custom pieces requested by clients.</p>\n<p>With a background in psychology and music, Jelena brings focus, reliability, and emotional awareness to every performance.</p>\n",
+      "bioHr": "<p>Jelena je klasično obrazovana pijanistica s velikim iskustvom u ceremonijama i formalnim prigodama.<br />\nNjezino sviranje je mirno, precizno i usmjereno na oblikovanje atmosfere.</p>\n<p>Uz ceremonije, često nastupa i tijekom večera i prijema.<br />\nKonstantno prilagođava i nadopunjava repertoar, te uči nove skladbe prema željama klijenata.</p>\n<p>Spoj glazbenog i psihološkog obrazovanja osigurava sigurnost i smirenost svakom nastupu.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Lounge",
+        "Acoustic"
+      ],
+      "hoverPreviewEn": "Classically trained pianist for ceremonies and elegant dinner settings.",
+      "hoverPreviewHr": "Akademski obrazovana pijanistica za ceremonije i elegantne večere.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Jelena-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Jelena-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "cola",
+    "title": "Cola",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Cola",
+      "bioEn": "<p>Cola is a DJ with fresh energy and a strong instinct for timing.<br />\nAs an open-format DJ, he moves comfortably between genres, with a particular love for house and Italo disco during summer parties.</p>\n<p>Outside of DJing, his musical interests range from rock and metal to traditional Dalmatian a cappella.<br />\nThis broad listening background supports a selection style that resonates with both Croatian and international audiences.</p>\n<p>In the event industry, Cola combines strong song selection with effortless mixing and outgoing professionalism.</p>\n",
+      "bioHr": "<p>Cola je DJ s pozitivnom energijom i vrlo dobrim osjećajem za timing.<br />\nS lakoćom se kreće kroz različite žanrove, s naglaskom na house i Italo disco tijekom ljetnih partyja.</p>\n<p>Van DJ pulta sluša rock, metal i dalmatinsku klapsku glazbu. Ta širina se osjeti u njegovoj selekciji, koja jednako dobro funkcionira kod domaće i strane publike.</p>\n<p>U event industriji je poznat kao profesionalan, pouzdan i ugodan suradnik.</p>\n",
+      "eventType": [
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Party",
+        "Lounge"
+      ],
+      "hoverPreviewEn": "Adaptable open-format DJ with strong people skills and musical flexibility.",
+      "hoverPreviewHr": "Prilagodljiv open-format DJ s izraženim osjećajem za ljude i glazbu.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Cola-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Cola-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "blazro",
+    "title": "Blazro",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Blazro",
+      "bioEn": "<p>Blazro is a DJ with solid experience across nightclubs, beach clubs, and ski resorts.<br />\nAlthough fully open format, his selections often centre around house and R&B in club settings, and disco house for beach and open-air events.</p>\n<p>His energy connects especially well with millennial and younger crowds, inspired by open-air events and the Ibiza house scene.<br />\nHe understands pacing and builds parties with clarity and confidence.</p>\n<p>With a background in economics, Blazro brings focus and structure into his DJ work.</p>\n",
+      "bioHr": "<p>Blazro je DJ s iskustvom u klubovima, beach barovima i ski resortima.<br />\nIako radi u open-formatu, najčešće se oslanja na house i R&B u klupskim okruženjima te disco house za dnevne i open-air evente.</p>\n<p>Njegov stil dobro rezonira s mlađom publikom zbog iskustva sopen-air partyja i Ibiza house scene.<br />\nPažljivo gradi dinamiku večeri i zna kako razviti party bez naglih skokova.</p>\n<p>Ekonomsku pozadinu zamijenio je DJ pultom, zadržavši fokus i organiziranost u svakom nastupu.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Energetic",
+        "Party",
+        "Lounge",
+        "Acoustic"
+      ],
+      "hoverPreviewEn": "Modern open-format DJ with a strong feel for clubs and open-air events.",
+      "hoverPreviewHr": "Suvremen DJ s jakim osjećajem za club i open-air evente.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Blazro-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Blazro-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "anthony",
+    "title": "Anthony",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Anthony",
+      "bioEn": "<p>Anthony is a DJ focused on Balkan-oriented celebrations.<br />\nHis sets combine folk, turbofolk, and regional club hits with modern dance and R&B elements.</p>\n<p>He is particularly well suited for weddings and large celebrations with a predominantly Balkan, or mixed crowd.<br />\nHis sets evolve around combining strong emotions with peak hour moments</p>\n<p>When paired with live trumpet, Anthony delivers powerful party energy at key moments.</p>\n",
+      "bioHr": "<p>Anthony je DJ fokusiran na balkanske proslave i energične party formate.<br />\nU svojim setovima spaja folk, turbofolk i regionalne klupske hitove s modernim dance i R&B elementima.</p>\n<p>Posebno se ističe na vjenčanjima i većim proslavama s balkanskom ili mješovitom publikom.<br />\nNjegovi nastupi kombiniraju emocije sa snažnim vrhunacima večeri.</p>\n<p>Nastupa i u kombinaciji s live trubom, dodatno pojačavajući energiju u ključnim trenucima.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party"
+      ],
+      "hoverPreviewEn": "High-energy DJ specialising in Balkan party formats.",
+      "hoverPreviewHr": "Energičan DJ specijaliziran za balkanske partyje.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Anthony-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Anthony-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "andrej",
+    "title": "Andrej",
+    "tags": {
+      "nodes": [
+        {
+          "name": "DJ"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Andrej",
+      "bioEn": "<p>Andrej is a self-taught multi-instrumentalist who balances DJing with extensive studio work.<br />\nHe continuously refines edits, remixes, and ideas that enhance his performances, as well as sets of all other Main Event artists.</p>\n<p>Calm and focused behind the decks, Andrej lets selection and flow shape the experience.<br />\nHis musical background spans R&B, house, disco, indie rock, metal, techno, and jazz-influenced electronic music.</p>\n<p>After leaving a career in banking, he now dedicates his full attention to music and production.</p>\n",
+      "bioHr": "<p>Andrej je samouki multiinstrumentalist koji jednako ozbiljno pristupa DJ-ingu i radu u studiju.<br />\nKontinuirano razvija edite, remixe i glazbene ideje koje unaprjeđuju njegove setove, kao i repertoar drugih Main Event glazbenika.</p>\n<p>Za pultom je miran i fokusiran, s naglaskom na selekciju i prirodan flow.<br />\nNjegova glazbena pozadina obuhvaća R&B, house, disco, indie rock, metal, techno i jazz-elektroniku.</p>\n<p>Nakon karijere u bankarstvu, u potpunosti se posvetio glazbi i produkciji.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party",
+        "Lounge"
+      ],
+      "hoverPreviewEn": "DJ and producer with a wide musical range and a strong studio mindset.",
+      "hoverPreviewHr": "DJ i producent sa širokim glazbenim spektrom i izraženim studijskim pristupom.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Andrej-1.jpeg",
+      "image2": null,
+      "image3": null
+    }
+  },
+  {
+    "slug": "luka",
+    "title": "Luka",
+    "tags": {
+      "nodes": [
+        {
+          "name": "Saxophonist"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Luka",
+      "bioEn": "<p>Luka is a classically trained saxophonist with a strong technical foundation and broad performance experience.<br />\nHe began playing at a young age, completed formal classical training and is a full-time musician.</p>\n<p>Luka performs pop, R&B and club hits alongside DJs, adding live energy and interaction.<br />\nFor solo performances, his focus shifts toward jazz and classical-influenced repertoire, creating a refined atmosphere.</p>\n<p>Comfortable in both roles, Luka adapts naturally as an event moves from background elegance to more dynamic moments.</p>\n",
+      "bioHr": "<p>Luka je klasično obrazovani saksofonist s čvrstom tehničkom podlogom i raznolikim iskustvom nastupa.<br />\nSvirati je počeo u ranoj dobi, završio formalno klasično obrazovanje i radi isključivo kao glazbenik.</p>\n<p>U kontekstu nastupa uz DJ-e, svira pop, R&B i klupske hitove, donoseći live energiju i interakciju.<br />\nU solo nastupima naglasak stavlja na repertoar inspiriran jazzom i klasikom, stvarajući profinjenu atmosferu.</p>\n<p>Sigurno se kreće između obje uloge i prirodno se prilagođava razvoju večeri.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party",
+        "Lounge",
+        "Acoustic"
+      ],
+      "hoverPreviewEn": "Classically trained saxophonist for solo sets and DJ combinations.",
+      "hoverPreviewHr": "Klasično obrazovani saksofonist za solo nastupe i DJ kombinacije.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Luka-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Luka-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "angelo",
+    "title": "Angelo",
+    "tags": {
+      "nodes": [
+        {
+          "name": "Trumpet player"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Angelo",
+      "bioEn": "<p>Angelo is a trumpet player known for direct, high-impact performances.<br />\nHis style is designed to raise energy instantly and create strong crowd engagement.</p>\n<p>He performs across Balkan and international music, focusing on concentrated peak moments.<br />\nConfident on stage and in the crowd, he delivers clear musical highlights.</p>\n<p>Angelo is an ideal addition for events that benefit from bold live elements.</p>\n",
+      "bioHr": "<p>Angelo je trubač poznat po snažnim, udarnim nastupima.<br />\nNjegov stil trenutačno podiže energiju i potiče interakciju s publikom.</p>\n<p>Siguran na pozornici i među publikom, nastupa svirajući balkanske i svjetske hitove, s fokusom na kratke i snažne vrhunce večeri.</p>\n<p>Idealan je dodatak eventima koji traže izražene live momente.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Energetic",
+        "Party",
+        "Acoustic"
+      ],
+      "hoverPreviewEn": "High-impact trumpet player for peak party moments.",
+      "hoverPreviewHr": "Trubač stvoren za vrhunce partyja.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Andelo-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Andelo-2.jpeg",
+      "image3": null
+    }
+  },
+  {
+    "slug": "fjok-collective",
+    "title": "FJOK Collective",
+    "tags": {
+      "nodes": [
+        {
+          "name": "Trio"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "FJOK Collective",
+      "bioEn": "<p>FJOK Collective is a DJ and saxophone combination formed by Jerry, Mirko, and Vice.<br />\nTheir sound is rooted in groove and open-format selections paired with live saxophone.<br />\nEach member brings a distinct strength: technical precision, musical range, and live performance experience.</p>\n<p>Together, this creates a dynamic that works across generations and audiences, the dancefloor connected.<br />\nBeyond music, FJOK Collective is built for demanding events.</p>\n<p>Accustomed to complex timelines, high expectations, and premium venues, they approach every detail - from outfits to equipment and stage presence - with clarity, coordination, and confidence.</p>\n",
+      "bioHr": "<p>FJOK Collective je DJ i saksofon kombinacija koju čine Jerry, Mirko i Vice.<br />\nNjihov glazbeni identitet temelji se na grooveu i open-format selekciji u kombinaciji sa saksofonom.<br />\nSvaki član donosi vlastitu snagu: tehničku preciznost, glazbenu širinu i bogato iskustvo live nastupa.</p>\n<p>Zajedno stvaraju nastup koji prirodno povezuje za različite generacije i publike.<br />\nOsim same glazbe, FJOK Collective garantira sigurnu realizaciju zahtjevnih evenata.</p>\n<p>Navikli na složene rasporede, visoka očekivanja i premium prostore, svaki detalj - od odjeće do opreme i scenskog nastupa - rješavaju smireno, organizirano i profesionalno.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party"
+      ],
+      "hoverPreviewEn": "DJ & sax collective for high-end events that demand experience and precision.",
+      "hoverPreviewHr": "DJ & sax kolektiv za zahtjevne, vrhunske evente.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/FJOK-Collective-1-scaled-e1778154294741.jpg",
+      "image2": null,
+      "image3": null
+    }
+  },
+  {
+    "slug": "vice",
+    "title": "Vice",
+    "tags": {
+      "nodes": [
+        {
+          "name": "Saxophonist"
+        }
+      ]
+    },
+    "categories": {
+      "nodes": [
+        {
+          "slug": "artist",
+          "name": "Artist"
+        }
+      ]
+    },
+    "artists": {
+      "artistName": "Vice",
+      "bioEn": "<p>Vice is a saxophonist with over three decades of experience creating atmosphere and energy through live performance.<br />\nHis playing is guided by timing, intuition, and a strong understanding of people.</p>\n<p>As a solo performer, he brings warmth and familiarity through jazz, bossa nova, and instrumental versions of well-known songs.<br />\nIn DJ collaborations, he adds live elements that lift energy and highlight key moments.</p>\n<p>Built on years of experience across events and venues, Vice delivers confident, responsive performances.</p>\n",
+      "bioHr": "<p>Vice je saksofonist s više od 30 godina iskustva u stvaranju atmosfere kroz glazbu.<br />\nNjegovo sviranje vodi intuicija, osjećaj za trenutak i publiku.</p>\n<p>Kao solo izvođač donosi jazz, bossu novu i instrumentalne obrade poznatih pjesama.<br />\nU kombinaciji s DJ-ima podiže energiju i naglašava ključne trenutke večeri.</p>\n<p>Iskustvo iz brojnih prostora i evenata čini ga sigurnim i prilagodljivim izvođačem.</p>\n",
+      "eventType": [
+        "Wedding",
+        "Corporate",
+        "Yacht",
+        "Private"
+      ],
+      "vibe": [
+        "Elegant",
+        "Energetic",
+        "Party",
+        "Lounge",
+        "Acoustic"
+      ],
+      "hoverPreviewEn": "Seasoned saxophonist with a natural feel for atmosphere and crowd enjoyment.",
+      "hoverPreviewHr": "Iskusni saksofonist s prirodnim osjećajem za atmosferu i publiku.",
+      "image1": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Vice-1.jpeg",
+      "image2": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Vice-2.jpeg",
+      "image3": "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Vice-3.jpeg"
+    }
+  }
+]

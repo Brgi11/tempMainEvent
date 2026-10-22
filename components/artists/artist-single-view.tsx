@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArtistFaqStatic } from "./artist-faq-static";
 import { ArtistInquiryForm } from "@/components/artists/artist-inquiry-form";
 import { useLang } from "@/components/i18n/LanguageProvider";
+import { markArtistsArchiveRestore } from "./archive-scroll";
 
 type Props = { post: WpArtistPostNode };
 
@@ -39,7 +40,12 @@ export function ArtistSingleView({ post }: Props) {
     <section id="artist-single" className="artist-single-section">
       <div className="artist-single-container">
         <div className="artist-single-topbar">
-          <Link href="/artists" className="artist-single-back" scroll>
+          <Link
+            href="/artists"
+            className="artist-single-back"
+            scroll={false}
+            onClick={() => markArtistsArchiveRestore()}
+          >
             ← {isHr ? "Natrag na izvođače" : "Back to artists"}
           </Link>
         </div>

@@ -3,8 +3,13 @@
 import type { ArtistsArchiveStatus } from "@/lib/data/artists";
 import type { ArtistCardModel } from "@/lib/wp/types";
 import Link from "next/link";
-import { useMemo, useState, useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "@/components/i18n/LanguageProvider";
+import {
+  consumeArtistsArchiveRestore,
+  saveArtistsArchiveSnapshot,
+  scrollArtistsArchiveTo,
+} from "./archive-scroll";
 
 type Props = {
   artists: ArtistCardModel[];
@@ -60,6 +65,39 @@ export function ArtistsArchiveClient({
 
   const [eventTypeFilter, setEventTypeFilter] = useState("all");
   const [vibeFilter, setVibeFilter] = useState("all");
+  const pendingScroll = useRef<{
+    y: number;
+    eventType: string;
+    vibe: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const snapshot = consumeArtistsArchiveRestore();
+    if (!snapshot) return;
+    pendingScroll.current = snapshot;
+    setEventTypeFilter(snapshot.eventType);
+    setVibeFilter(snapshot.vibe);
+  }, []);
+
+  useEffect(() => {
+    const pending = pendingScroll.current;
+    if (!pending) return;
+    if (
+      eventTypeFilter !== pending.eventType ||
+      vibeFilter !== pending.vibe
+    ) {
+      return;
+    }
+    pendingScroll.current = null;
+    const y = pending.y;
+    scrollArtistsArchiveTo(y);
+    const raf = requestAnimationFrame(() => scrollArtistsArchiveTo(y));
+    const later = window.setTimeout(() => scrollArtistsArchiveTo(y), 0);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(later);
+    };
+  }, [eventTypeFilter, vibeFilter]);
 
   const filtered = useMemo(() => {
     let out = artists;
@@ -246,7 +284,13 @@ export function ArtistsArchiveClient({
                       el.closest(".artist-page-description-overlay")
                     ) {
                       e.preventDefault();
+                      return;
                     }
+                    saveArtistsArchiveSnapshot({
+                      y: window.scrollY,
+                      eventType: eventTypeFilter,
+                      vibe: vibeFilter,
+                    });
                   }}
                 >
                   <div className="artist-page-image-wrapper">

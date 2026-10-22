@@ -1,35 +1,15 @@
 import { acfImageUrl } from "@/lib/wp/acf-media";
 import { postHasArtistCategory } from "@/lib/wp/artist-category";
 import { applyArtistOverrides, isHiddenArtist } from "@/lib/data/artist-overrides";
-import { FALLBACK_HOME_ARTISTS } from "@/lib/data/fallback-artists";
 import { appendLocalArtists, getLocalArtistPost } from "@/lib/data/local-artists";
-import {
-  formatWpGraphQLError,
-  isWpGraphqlConfigured,
-  wpGraphQL,
-} from "@/lib/wp/graphql";
-import {
-  ARTISTS_GRAPHQL_CATEGORY,
-  QUERY_ARTISTS,
-  QUERY_ARTISTS_PAGE,
-  QUERY_ARTIST_BY_SLUG,
-} from "@/lib/wp/queries";
+import staticArtistPosts from "@/lib/data/static-artist-posts.json";
 import type { ArtistCardModel, WpArtistPostNode } from "@/lib/wp/types";
 import { stripExcerpt } from "@/lib/wp/types";
 
-type PostsData = { posts?: { nodes?: WpArtistPostNode[] | null } | null };
-type ArtistsPostsPageData = {
-  posts?: {
-    pageInfo?: {
-      hasNextPage?: boolean | null;
-      endCursor?: string | null;
-    } | null;
-    nodes?: WpArtistPostNode[] | null;
-  } | null;
-};
-type ArtistBySlugData = { posts?: { nodes?: WpArtistPostNode[] | null } | null };
+/** Snapshot of the live artist posts, so this preview does not call WordPress. */
+const STATIC_ARTIST_POSTS = staticArtistPosts as WpArtistPostNode[];
 
-/** WordPress-only archive: no static fallback. */
+/** Archive load state kept for the existing page UI. */
 export type ArtistsArchiveStatus =
   | "ok"
   | "no_endpoint"
@@ -42,22 +22,12 @@ export type ArtistsArchiveResult = {
   errorDetail?: string;
 };
 
-async function fetchArtistCardsFromWordPress(
-  first: number
-): Promise<ArtistCardModel[]> {
-  const { data, errors } = await wpGraphQL<PostsData>(QUERY_ARTISTS, {
-    first,
-    category: ARTISTS_GRAPHQL_CATEGORY,
-  });
-  if (errors || data == null) return [];
-  const mapped = (data.posts?.nodes ?? [])
-    .map(mapPostToArtistCard)
-    .filter((x): x is ArtistCardModel => x !== null);
-
-  // Ensure stable alphabetical ordering for UI consistency.
-  return mapped.sort((a, b) =>
-    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-  );
+function staticArtistCards(): ArtistCardModel[] {
+  return STATIC_ARTIST_POSTS.map(mapPostToArtistCard)
+    .filter((artist): artist is ArtistCardModel => artist !== null)
+    .sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+    );
 }
 
 function isArtistPost(post: WpArtistPostNode | null | undefined): boolean {
@@ -153,100 +123,18 @@ function artistsThroughVice(artists: ArtistCardModel[]): ArtistCardModel[] {
 export async function getArtistsForHome(
   limit = 12
 ): Promise<ArtistCardModel[]> {
-  const mapped = await fetchArtistCardsFromWordPress(limit);
-  const list =
-    mapped.length > 0
-      ? mapped
-      : FALLBACK_HOME_ARTISTS.filter(
-          (artist) => !isHiddenArtist(artist.slug, artist.name)
-        ).sort((a, b) =>
-          a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-        );
-  return artistsThroughVice(list);
-}
-
-async function fetchArtistPostsConnection(
-  first: number,
-  category: string,
-  cursor: string | undefined
-): Promise<{
-  nodes: WpArtistPostNode[];
-  hasNext: boolean;
-  endCursor: string | null;
-  errors?: unknown;
-}> {
-  const vars: Record<string, unknown> = { first, category };
-  if (cursor) vars.after = cursor;
-  const { data, errors } = await wpGraphQL<ArtistsPostsPageData>(
-    QUERY_ARTISTS_PAGE,
-    vars
-  );
-  if (errors) {
-    return {
-      nodes: [],
-      hasNext: false,
-      endCursor: null,
-      errors,
-    };
-  }
-  const conn = data?.posts;
-  return {
-    nodes: conn?.nodes ?? [],
-    hasNext: !!conn?.pageInfo?.hasNextPage,
-    endCursor: conn?.pageInfo?.endCursor ?? null,
-  };
+  return artistsThroughVice(staticArtistCards()).slice(0, limit);
 }
 
 /**
- * Artists archive (/artists): loads all artist-category posts via cursor
- * pagination (for client-side filters). No static placeholders.
+ * Artists archive for this preview. Uses the saved WordPress snapshot,
+ * then appends local-only cards.
  */
 export async function getArtistsArchiveFromWordPress(options?: {
   maxArtists?: number;
 }): Promise<ArtistsArchiveResult> {
   const maxTotal = options?.maxArtists ?? 500;
-  if (!isWpGraphqlConfigured()) {
-    const local = appendLocalArtists([]);
-    if (local.length > 0) {
-      return { artists: local, status: "ok" };
-    }
-    return { artists: [], status: "no_endpoint" };
-  }
-
-  const category = ARTISTS_GRAPHQL_CATEGORY;
-  const pageSize = 80;
-  const raw: WpArtistPostNode[] = [];
-  let cursor: string | undefined;
-
-  while (raw.length < maxTotal) {
-    const page = await fetchArtistPostsConnection(
-      pageSize,
-      category,
-      cursor
-    );
-    if (page.errors) {
-      return {
-        artists: [],
-        status: "fetch_error",
-        errorDetail: formatWpGraphQLError(page.errors),
-      };
-    }
-    raw.push(...page.nodes);
-    if (!page.hasNext || !page.endCursor) break;
-    cursor = page.endCursor;
-    if (page.nodes.length === 0) break;
-  }
-
-  const artists = appendLocalArtists(
-    raw
-      .slice(0, maxTotal)
-      .map(mapPostToArtistCard)
-      .filter((x): x is ArtistCardModel => x !== null)
-      // WordPress artists stay alphabetical; local-only cards are appended after.
-      .sort((a, b) =>
-        a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-      )
-  );
+  const artists = appendLocalArtists(staticArtistCards()).slice(0, maxTotal);
 
   if (artists.length === 0) {
     return { artists: [], status: "empty" };
@@ -259,9 +147,10 @@ export async function getArtistPost(slug: string) {
   if (isHiddenArtist(slug)) return null;
   const local = getLocalArtistPost(slug);
   if (local) return applyArtistOverrides(local);
-  const { data, errors } = await wpGraphQL<ArtistBySlugData>(QUERY_ARTIST_BY_SLUG, { slug });
-  if (errors) return null;
-  const post = data?.posts?.nodes?.[0] ?? null;
+  const post =
+    STATIC_ARTIST_POSTS.find(
+      (artist) => artist.slug?.toLowerCase() === slug.trim().toLowerCase()
+    ) ?? null;
   if (!post?.slug) return null;
   if (isHiddenArtist(post.slug, post.artists?.artistName ?? post.title)) return null;
   if (!isArtistPost(post)) return null;
