@@ -32,7 +32,6 @@ export type WeddingPackage = {
   name: LocalizedText;
   cardDescription: LocalizedText;
   bestFor?: LocalizedText;
-  priceLabel: LocalizedText;
   imageUrl: string;
   /** Secondary add-on (e.g. instrumentalist) — not a standalone main package card. */
   isAddon?: boolean;

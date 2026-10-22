@@ -507,6 +507,11 @@ header.top-weddings-hero .hamburger {
 }
 
 /* Arrow CTA */
+.wedding-package-card--dj .wedding-package-card-cta,
+.wedding-package-card--addon .wedding-package-card-cta {
+  margin-top: auto;
+}
+
 .wedding-package-card-cta {
   display: inline-flex;
   align-items: center;

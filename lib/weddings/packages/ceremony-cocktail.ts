@@ -15,7 +15,6 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Couples who want elegant live strings and piano for ceremony and cocktail hour.",
       hr: "Parovi koji žele elegantan live klavir i violinu za ceremoniju i cocktail sat.",
     },
-    priceLabel: { en: "From €650", hr: "Od €650" },
     imageUrl: WEDDING_PACKAGE_IMAGES.dueRicce,
     detail: {
       intro: {
@@ -27,13 +26,11 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
           title: { en: "Ceremony", hr: "Ceremonija" },
           items: {
             en: [
-              "From €650",
               "30-minute live performance",
               "Violin & piano duo",
               "Personalized song selection available",
             ],
             hr: [
-              "Od €650",
               "30-minutna live izvedba",
               "Violina i klavir duo",
               "Moguć personalizirani odabir pjesama",
@@ -44,14 +41,12 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
           title: { en: "Cocktail hour", hr: "Cocktail sat" },
           items: {
             en: [
-              "From €750",
               "1-hour live performance",
               "Violin & piano duo",
               "Professional sound setup",
               "Curated cocktail hour atmosphere",
             ],
             hr: [
-              "Od €750",
               "1 sat live izvedbe",
               "Violina i klavir duo",
               "Profesionalni sound setup",
@@ -78,7 +73,6 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Couples who want a refined solo instrument for ceremony or cocktail hour.",
       hr: "Parovi koji žele profinjeni solo instrument za ceremoniju ili cocktail sat.",
     },
-    priceLabel: { en: "From €500", hr: "Od €500" },
     imageUrl: WEDDING_PACKAGE_IMAGES.soloInstrumentalist,
     detail: {
       intro: {
@@ -90,13 +84,11 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
           title: { en: "Ceremony", hr: "Ceremonija" },
           items: {
             en: [
-              "From €500",
               "30-minute live performance",
               "Choice of saxophone, violin, guitar or piano",
               "Personalized song selection available",
             ],
             hr: [
-              "Od €500",
               "30-minutna live izvedba",
               "Izbor saksofona, violine, gitare ili klavira",
               "Moguć personalizirani odabir pjesama",
@@ -107,14 +99,12 @@ export const CEREMONY_COCKTAIL_WEDDING_PACKAGES: WeddingPackage[] = [
           title: { en: "Cocktail hour", hr: "Cocktail sat" },
           items: {
             en: [
-              "From €500",
               "1-hour live performance",
               "Choice of saxophone, violin, guitar or piano",
               "Professional sound setup",
               "Curated cocktail hour atmosphere",
             ],
             hr: [
-              "Od €500",
               "1 sat live izvedbe",
               "Izbor saksofona, violine, gitare ili klavira",
               "Profesionalni sound setup",

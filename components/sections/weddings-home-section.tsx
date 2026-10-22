@@ -39,7 +39,6 @@ export function WeddingsHomeSection() {
           <div className="wh-grid">
             {FEATURED_PACKAGES.map((pkg) => {
               const name = t(pkg.name, lang);
-              const price = t(pkg.priceLabel, lang);
               const description = t(pkg.cardDescription, lang);
               const category = weddingCategoryLabel(pkg.sectionId, lang);
               return (
@@ -56,7 +55,6 @@ export function WeddingsHomeSection() {
                         alt={name}
                         className="wh-card-img"
                       />
-                      <span className="wh-card-price">{price}</span>
                     </div>
                   </div>
                   <div className="wh-card-body">

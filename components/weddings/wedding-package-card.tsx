@@ -32,7 +32,6 @@ export function WeddingPackageCard({ pkg, lang, variant }: Props) {
   const isHr = lang === "hr";
   const name = t(pkg.name, lang);
   const cardText = t(pkg.cardDescription, lang);
-  const price = t(pkg.priceLabel, lang);
   const bestFor = pkg.bestFor ? t(pkg.bestFor, lang) : null;
   const addonText = pkg.addonText ? t(pkg.addonText, lang) : null;
 
@@ -62,10 +61,6 @@ export function WeddingPackageCard({ pkg, lang, variant }: Props) {
           </p>
         ) : null}
 
-        {resolvedVariant !== "addon" && resolvedVariant !== "dj" ? (
-          <p className="wedding-package-card-price">{price}</p>
-        ) : null}
-
         <h3 className="wedding-package-card-title">{name}</h3>
         <p className="wedding-package-card-description">{cardText}</p>
 
@@ -79,12 +74,6 @@ export function WeddingPackageCard({ pkg, lang, variant }: Props) {
               {isHr ? "Najbolje za:" : "Best for:"}
             </span>{" "}
             {bestFor}
-          </p>
-        ) : null}
-
-        {resolvedVariant === "dj" || resolvedVariant === "addon" ? (
-          <p className="wedding-package-card-price wedding-package-card-price--inline">
-            {price}
           </p>
         ) : null}
 

@@ -15,7 +15,6 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Wedding after parties, combination with a live band.",
       hr: "After party vjenčanja, kombinacija s live bendom.",
     },
-    priceLabel: { en: "Start from €1500", hr: "Od €1500" },
     imageUrl: WEDDING_PACKAGE_IMAGES.essential,
     detail: {
       intro: {
@@ -84,7 +83,6 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "All types of weddings.",
       hr: "Sve vrste vjenčanja.",
     },
-    priceLabel: { en: "Start from €2200", hr: "Od €2200" },
     imageUrl: WEDDING_PACKAGE_IMAGES.signature,
     detail: {
       intro: {
@@ -159,7 +157,6 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Weddings who want a festival party experience.",
       hr: "Vjenčanja koja žele festival party iskustvo.",
     },
-    priceLabel: { en: "Start from €2500", hr: "Od €2500" },
     imageUrl: WEDDING_PACKAGE_IMAGES.premium,
     detail: {
       intro: {
@@ -228,7 +225,6 @@ export const DJ_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Weddings who want a live instrument performance.",
       hr: "Vjenčanja koja žele live instrumentalnu izvedbu.",
     },
-    priceLabel: { en: "Start from €900", hr: "Od €900" },
     imageUrl: WEDDING_PACKAGE_IMAGES.addOnInstrumentalist,
     detail: {
       intro: {

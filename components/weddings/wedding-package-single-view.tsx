@@ -12,7 +12,6 @@ export function WeddingPackageSingleView({ pkg }: Props) {
   const { lang } = useLang();
   const isHr = lang === "hr";
   const name = t(pkg.name, lang);
-  const price = t(pkg.priceLabel, lang);
   const category = weddingCategoryLabel(pkg.sectionId, lang);
   const addonText = pkg.addonText ? t(pkg.addonText, lang) : null;
   const showChapterNumbers = pkg.detail.blocks.length > 1;
@@ -28,7 +27,6 @@ export function WeddingPackageSingleView({ pkg }: Props) {
           >
             {isHr ? "Natrag na pakete" : "All packages"}
           </Link>
-          <span className="wv-price">{price}</span>
         </div>
 
         <div className="wv-opening">

@@ -15,7 +15,6 @@ export const SPECIAL_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "House, disco, pop, urban styled Croatian and international weddings.",
       hr: "House, disco, pop i urban stilizirana hrvatska i međunarodna vjenčanja.",
     },
-    priceLabel: { en: "Start from €3750", hr: "Od €3750" },
     imageUrl: WEDDING_PACKAGE_IMAGES.fjokCollective,
     socialLinks: {
       instagram: "https://www.instagram.com/fjok_collective/?hl=en",
@@ -97,7 +96,6 @@ export const SPECIAL_WEDDING_PACKAGES: WeddingPackage[] = [
       en: "Weddings with a mix of Balkans and international music.",
       hr: "Vjenčanja s miksom balkanske i međunarodne glazbe.",
     },
-    priceLabel: { en: "Start from €3000", hr: "Od €3000" },
     imageUrl: WEDDING_PACKAGE_IMAGES.blknExcess,
     socialLinks: {
       instagram: "https://www.instagram.com/blkn_excess/?hl=en",
