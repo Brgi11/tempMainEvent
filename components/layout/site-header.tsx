@@ -62,12 +62,11 @@ export function SiteHeader() {
             <Link href="/weddings">
               {lang === "hr" ? "vjenčanja." : "weddings."}
             </Link>
-
-            {/* Temporarily hidden — restore when Artists / Production return
             <Link href="/artists">
               {lang === "hr" ? "izvođači." : "artists."}
             </Link>
 
+            {/* Temporarily hidden — restore when Production returns
             <div className="menu-item">
               <button type="button">
                 <span>{lang === "hr" ? "produkcija." : "production."}</span>{" "}
@@ -148,10 +147,10 @@ export function SiteHeader() {
         <Link href="/weddings" onClick={() => setMobileOpen(false)}>
           {lang === "hr" ? "vjenčanja." : "weddings."}
         </Link>
-        {/* Temporarily hidden — restore when Artists / Production return
         <Link href="/artists" onClick={() => setMobileOpen(false)}>
           {lang === "hr" ? "izvođači." : "artists."}
         </Link>
+        {/* Temporarily hidden — restore when Production returns
         <Link href="/sound" onClick={() => setMobileOpen(false)}>
           {lang === "hr" ? "razglas." : "sound."}
         </Link>

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useLang } from "@/components/i18n/LanguageProvider";
 
-const FAQ_ITEMS = [
+const FAQ_ITEMS_EN = [
   {
     q: "What are your normal set lengths?",
     a: "Our standard set lengths are typically 60-90 minutes, but we can customize the duration based on your event needs. We're flexible and can accommodate shorter or longer sets as required.",
@@ -41,13 +42,55 @@ const FAQ_ITEMS = [
   },
 ];
 
+const FAQ_ITEMS_HR = [
+  {
+    q: "Koliko obično traju vaši setovi?",
+    a: "Standardni set obično traje 60 do 90 minuta, ali trajanje prilagođavamo prema potrebama vašeg događaja. Fleksibilni smo i možemo izvesti kraće ili duže setove prema dogovoru.",
+  },
+  {
+    q: "Imate li različite opcije postava?",
+    a: "Da, nudimo različite postave. Možete birati između solo nastupa, duo postave ili punog benda. Zajedno biramo idealnu glazbenu kombinaciju za vaš događaj.",
+  },
+  {
+    q: "Donosite li vlastiti razglas i rasvjetu? Što je uključeno u cijenu?",
+    a: "Donosimo profesionalni razglas: zvučnike, mikrofone, miksete i pojačala. Osnovna rasvjeta je uključena u standardni paket. Premium rasvjeta dolazi uz doplatu. Sva oprema je osigurana i redovito održavana po najvišim standardima.",
+  },
+  {
+    q: "Pružate li DJ uslugu i između i nakon live setova?",
+    a: "Naravno. Pokrivamo cijeli događaj kontinuiranom glazbom. Između live setova nastavljamo s DJ servisom i prilagođenim playlistama koje prate atmosferu večeri. Bez trenutaka tišine.",
+  },
+  {
+    q: "U koje vrijeme obično dolazite na lokaciju za postavljanje?",
+    a: "Obično dolazimo 2 do 3 sata prije početka događaja. To nam daje dovoljno vremena za postavljanje opreme, sound check i pripremu prije dolaska gostiju.",
+  },
+  {
+    q: "Koliko traje postavljanje i sound check?",
+    a: "Postavljanje i sound check obično traju 60 do 90 minuta. Uključuje instalaciju opreme, raspored kabela, balansiranje zvuka i kratki test izvedbe za optimalnu kvalitetu.",
+  },
+  {
+    q: "Možete li naučiti pjesmu po želji (npr. prvi ples)?",
+    a: "Da, rado učimo specifične pjesme za posebne trenutke poput prvog plesa, glazbe za ceremoniju ili druge važne dijelove događaja. Molimo da nam zahtjev za pjesmu pošaljete barem 2 tjedna unaprijed da je dobro pripremimo.",
+  },
+  {
+    q: "Koliko prostora treba za vaš nastup?",
+    a: "Najčešće trebamo minimalno 3x3 metra prostora za nastup. Ako je prostor manji, prilagodimo se. Za veće postave s punim bendom dogovaramo prostor tijekom planiranja.",
+  },
+  {
+    q: "Nastupate li i na otvorenom ili u neuobičajenim prostorima (štale, plaže)?",
+    a: "Da, imamo iskustvo s nastupima na otvorenom, u štalama, na plažama i drugim specifičnim lokacijama. Imamo opremu otpornu na vremenske uvjete i prilagođavamo postavu okruženju. Za vanjske događaje vrijede dodatni uvjeti.",
+  },
+];
+
 export function ArtistFaqStatic() {
+  const { lang } = useLang();
+  const isHr = lang === "hr";
+  const items = isHr ? FAQ_ITEMS_HR : FAQ_ITEMS_EN;
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   return (
     <div className="artist-faq-section">
-      <h2 className="faq-title">FAQs</h2>
+      <h2 className="faq-title">{isHr ? "Česta pitanja" : "FAQs"}</h2>
       <div className="faq-list">
-        {FAQ_ITEMS.map((item, idx) => {
+        {items.map((item, idx) => {
           const open = activeIdx === idx;
           return (
             <button

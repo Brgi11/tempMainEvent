@@ -33,8 +33,8 @@ export function SiteFooter() {
         <div className="footer-col">
           <h4>{isHr ? "USLUGE" : "SERVICES"}</h4>
           <Link href="/weddings">{isHr ? "vjenčanja." : "Weddings"}</Link>
-          {/* Temporarily hidden — restore when Artists / Production return
           <Link href="/artists">{isHr ? "izvođači." : "Artists"}</Link>
+          {/* Temporarily hidden — restore when Production returns
           <Link href="/sound">{isHr ? "razglas." : "Sound Production"}</Link>
           <Link href="/lighting">{isHr ? "rasvjeta." : "Lighting"}</Link>
           */}

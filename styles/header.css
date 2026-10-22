@@ -102,10 +102,19 @@ header.top .hamburger {
   color: #c0b5ac;
 }
 
-/* Transparent header: production/explore dropdown targets stay body text color */
-header.top .dropdown a,
-header.top .dropdown a:hover {
-  color: #1f201b;
+/* Dark hero: light type on a glass panel, not a cream card */
+header.top:not(.top-weddings-hero) .dropdown::after {
+  background: rgba(31, 32, 27, 0.72);
+  border-color: rgba(241, 237, 233, 0.22);
+}
+
+header.top:not(.top-weddings-hero) .dropdown a,
+header.top:not(.top-weddings-hero) .dropdown a:hover {
+  color: #f1ede9;
+}
+
+header.top:not(.top-weddings-hero) .dropdown a::after {
+  background-color: #f1ede9;
 }
 
 /* Scrolled nav: dark logo, dark text (default) */
@@ -186,33 +195,57 @@ header.scrolled .logo-dark {
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 20px);
-  left: 0;
-  background: rgba(241, 237, 233, 0.95);
-  backdrop-filter: blur(14px);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: 0.3s ease;
-  min-width: 200px;
-  padding: 16px 24px;
-  border-radius: 0;
-  border: 1px solid rgba(31, 32, 27, 0.1);
-  box-shadow: 0 4px 12px rgba(31, 32, 27, 0.15);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 0;
+  padding: 14px 18px 10px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -8px;
+  height: 14px;
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 10px;
+  bottom: 0;
+  background: rgba(241, 237, 233, 0.96);
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  backdrop-filter: blur(16px);
 }
 
 .dropdown a {
   display: block;
-  padding: 10px 0;
+  padding: 6px 0;
   color: #1f201b;
   text-decoration: none;
-  font-size: 18px;
-  letter-spacing: 0.15em;
+  font-size: 16px;
+  letter-spacing: 0.12em;
   font-family: "EB Garamond", serif;
   font-weight: 500;
+  white-space: nowrap;
   position: relative;
-  transition: color 0.3s ease, opacity 0.3s ease;
-  opacity: 0.9;
+  z-index: 1;
+  transition: opacity 0.2s ease;
+  opacity: 0.82;
 }
 
 .dropdown a:hover {
@@ -222,12 +255,12 @@ header.scrolled .logo-dark {
 .dropdown a::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #1f201b;
-  transition: width 0.3s ease;
+  background-color: currentColor;
+  transition: width 0.25s ease;
 }
 
 .dropdown a:hover::after {
@@ -235,7 +268,9 @@ header.scrolled .logo-dark {
 }
 
 .menu-item:hover .dropdown {
-  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .hamburger {

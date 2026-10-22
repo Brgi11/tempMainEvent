@@ -1,6 +1,8 @@
 import { acfImageUrl } from "@/lib/wp/acf-media";
 import { postHasArtistCategory } from "@/lib/wp/artist-category";
+import { applyArtistOverrides, isHiddenArtist } from "@/lib/data/artist-overrides";
 import { FALLBACK_HOME_ARTISTS } from "@/lib/data/fallback-artists";
+import { appendLocalArtists, getLocalArtistPost } from "@/lib/data/local-artists";
 import {
   formatWpGraphQLError,
   isWpGraphqlConfigured,
@@ -92,12 +94,16 @@ function normalizeStringArrayRaw(value: unknown): string[] {
 }
 
 function mapPostToArtistCard(node: WpArtistPostNode): ArtistCardModel | null {
-  const slug = node.slug?.trim();
+  if (isHiddenArtist(node.slug, node.artists?.artistName ?? node.title)) {
+    return null;
+  }
+  const overridden = applyArtistOverrides(node);
+  const slug = overridden.slug?.trim();
   if (!slug) return null;
-  const acf = node.artists;
-  const name = trimMaybe(acf?.artistName) || trimMaybe(node.title) || slug;
+  const acf = overridden.artists;
+  const name = trimMaybe(acf?.artistName) || trimMaybe(overridden.title) || slug;
   const tagLabel =
-    (node.tags?.nodes?.find((t) => typeof t?.name === "string" && t.name.trim())
+    (overridden.tags?.nodes?.find((t) => typeof t?.name === "string" && t.name.trim())
       ?.name ?? "")
       .trim();
   const eventTypeRaw = normalizeStringArrayRaw(acf?.eventType);
@@ -125,23 +131,38 @@ function mapPostToArtistCard(node: WpArtistPostNode): ArtistCardModel | null {
 }
 
 export function getArtistDisplayName(post: WpArtistPostNode): string {
+  const overridden = applyArtistOverrides(post);
   return (
-    trimMaybe(post.artists?.artistName) ||
-    trimMaybe(post.title) ||
-    trimMaybe(post.slug) ||
+    trimMaybe(overridden.artists?.artistName) ||
+    trimMaybe(overridden.title) ||
+    trimMaybe(overridden.slug) ||
     "Artist"
   );
+}
+
+function artistsThroughVice(artists: ArtistCardModel[]): ArtistCardModel[] {
+  const viceIndex = artists.findIndex(
+    (artist) =>
+      artist.slug.toLowerCase() === "vice" ||
+      artist.name.trim().toLowerCase() === "vice"
+  );
+  if (viceIndex < 0) return artists;
+  return artists.slice(0, viceIndex + 1);
 }
 
 export async function getArtistsForHome(
   limit = 12
 ): Promise<ArtistCardModel[]> {
   const mapped = await fetchArtistCardsFromWordPress(limit);
-  if (mapped.length > 0) return mapped;
-  // Keep fallback deterministic as well.
-  return [...FALLBACK_HOME_ARTISTS].sort((a, b) =>
-    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-  );
+  const list =
+    mapped.length > 0
+      ? mapped
+      : FALLBACK_HOME_ARTISTS.filter(
+          (artist) => !isHiddenArtist(artist.slug, artist.name)
+        ).sort((a, b) =>
+          a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+        );
+  return artistsThroughVice(list);
 }
 
 async function fetchArtistPostsConnection(
@@ -185,6 +206,10 @@ export async function getArtistsArchiveFromWordPress(options?: {
 }): Promise<ArtistsArchiveResult> {
   const maxTotal = options?.maxArtists ?? 500;
   if (!isWpGraphqlConfigured()) {
+    const local = appendLocalArtists([]);
+    if (local.length > 0) {
+      return { artists: local, status: "ok" };
+    }
     return { artists: [], status: "no_endpoint" };
   }
 
@@ -212,14 +237,16 @@ export async function getArtistsArchiveFromWordPress(options?: {
     if (page.nodes.length === 0) break;
   }
 
-  const artists = raw
-    .slice(0, maxTotal)
-    .map(mapPostToArtistCard)
-    .filter((x): x is ArtistCardModel => x !== null)
-    // Ensure stable alphabetical ordering for the client-side filters.
-    .sort((a, b) =>
-      a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-    );
+  const artists = appendLocalArtists(
+    raw
+      .slice(0, maxTotal)
+      .map(mapPostToArtistCard)
+      .filter((x): x is ArtistCardModel => x !== null)
+      // WordPress artists stay alphabetical; local-only cards are appended after.
+      .sort((a, b) =>
+        a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+      )
+  );
 
   if (artists.length === 0) {
     return { artists: [], status: "empty" };
@@ -229,10 +256,14 @@ export async function getArtistsArchiveFromWordPress(options?: {
 }
 
 export async function getArtistPost(slug: string) {
+  if (isHiddenArtist(slug)) return null;
+  const local = getLocalArtistPost(slug);
+  if (local) return applyArtistOverrides(local);
   const { data, errors } = await wpGraphQL<ArtistBySlugData>(QUERY_ARTIST_BY_SLUG, { slug });
   if (errors) return null;
   const post = data?.posts?.nodes?.[0] ?? null;
   if (!post?.slug) return null;
+  if (isHiddenArtist(post.slug, post.artists?.artistName ?? post.title)) return null;
   if (!isArtistPost(post)) return null;
-  return post;
+  return applyArtistOverrides(post);
 }

@@ -71,6 +71,13 @@ a {
   align-items: start;
 }
 
+.artist-media-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
 .artist-main-image-wrapper {
   width: 100%;
   height: 600px;
@@ -83,6 +90,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 

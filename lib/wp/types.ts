@@ -23,6 +23,7 @@ export type WpArtistAcf = {
   image1?: WpAcfImageish;
   image2?: WpAcfImageish;
   image3?: WpAcfImageish;
+  extraGallery?: string[] | null;
 } | null;
 
 export type WpArtistPostNode = {

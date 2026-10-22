@@ -9,6 +9,16 @@ const MAX_REDIRECTS = 10;
 const GRAPHQL_UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
+/**
+ * Public WordPress the live site reads. Used when this preview has no env vars,
+ * so artist pages still load the same posts, bios, and photos.
+ */
+const LIVE_WORDPRESS_URL = "https://eiz.hr/mainevent";
+
+function wordpressSiteUrl(): string {
+  return trimEnv(process.env.WORDPRESS_URL).replace(/\/+$/, "") || LIVE_WORDPRESS_URL;
+}
+
 /** Trim env values. Use static `process.env.NAME` access so Next.js / Turbopack expose vars on Netlify (dynamic `process.env[key]` often stays empty in server bundles). */
 function trimEnv(value: string | undefined): string {
   return (value ?? "").trim();
@@ -19,7 +29,7 @@ function buildGraphqlHeaders(): Record<string, string> {
     Accept: "application/json",
     "User-Agent": GRAPHQL_UA,
   };
-  const site = trimEnv(process.env.WORDPRESS_URL).replace(/\/+$/, "");
+  const site = wordpressSiteUrl();
   if (site) {
     try {
       const base = new URL(site.endsWith("/") ? site : `${site}/`);
@@ -44,7 +54,8 @@ function buildMinimalGraphqlPostHeaders(): Record<string, string> {
 function graphqlHttpUrlFromEnv(): string {
   return (
     trimEnv(process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL) ||
-    trimEnv(process.env.WORDPRESS_GRAPHQL_URL)
+    trimEnv(process.env.WORDPRESS_GRAPHQL_URL) ||
+    `${LIVE_WORDPRESS_URL}/graphql`
   );
 }
 
@@ -127,7 +138,7 @@ export function isWpGraphqlConfigured(): boolean {
 function graphqlRootBases(): string[] {
   const list: string[] = [];
   const g = graphqlHttpUrlFromEnv();
-  const w = trimEnv(process.env.WORDPRESS_URL).replace(/\/+$/, "");
+  const w = wordpressSiteUrl();
   const homePath = trimEnv(process.env.WORDPRESS_HOME_PATH).replace(
     /^\/+|\/+$/g,
     ""

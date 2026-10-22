@@ -4,13 +4,12 @@ import type { ArtistCardModel } from "@/lib/wp/types";
 export const FALLBACK_HOME_ARTISTS: ArtistCardModel[] = [
   {
     slug: "mirko-from-fjok",
-    name: "mirko from fjok",
+    name: "Mirko",
     typeLabel: "DJ",
     tagLabel: "",
     eventType: ["dj"],
     vibe: [],
-    imageUrl:
-      "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Mirko-1.jpeg",
+    imageUrl: "/artists/mirko.jpg",
     hoverText:
       "Open-format DJ delivering a wide musical range and confident crowd reading.",
   },
@@ -21,8 +20,7 @@ export const FALLBACK_HOME_ARTISTS: ArtistCardModel[] = [
     tagLabel: "",
     eventType: ["dj"],
     vibe: [],
-    imageUrl:
-      "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Jerry-Dollan-1-scaled.jpg",
+    imageUrl: "/artists/jerry.jpg",
     hoverText:
       "Technically creative DJ with a sharp ear for detail and presentation.",
   },
@@ -33,22 +31,9 @@ export const FALLBACK_HOME_ARTISTS: ArtistCardModel[] = [
     tagLabel: "",
     eventType: ["pianist"],
     vibe: [],
-    imageUrl:
-      "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Jelena-1.jpeg",
+    imageUrl: "/artists/jelena.jpg",
     hoverText:
       "Classically trained pianist for ceremonies and elegant dinner settings.",
-  },
-  {
-    slug: "cola",
-    name: "Cola",
-    typeLabel: "DJ",
-    tagLabel: "",
-    eventType: ["dj"],
-    vibe: [],
-    imageUrl:
-      "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Cola-1.jpeg",
-    hoverText:
-      "Adaptable open-format DJ with strong people skills and musical flexibility.",
   },
   {
     slug: "vice",
@@ -57,8 +42,7 @@ export const FALLBACK_HOME_ARTISTS: ArtistCardModel[] = [
     tagLabel: "",
     eventType: ["saxophonist"],
     vibe: [],
-    imageUrl:
-      "https://eiz.hr/mainevent/wp-content/uploads/2026/02/Vice-1.jpeg",
+    imageUrl: "/artists/vice.jpg",
     hoverText:
       "Seasoned saxophonist with a natural feel for atmosphere and crowd enjoyment.",
   },
@@ -77,8 +61,8 @@ export const FALLBACK_HOME_ARTISTS: ArtistCardModel[] = [
   {
     slug: "angelo",
     name: "Angelo",
-    typeLabel: "Trumpet Player",
-    tagLabel: "",
+    typeLabel: "Trumpet",
+    tagLabel: "Trumpet",
     eventType: ["trumpet player"],
     vibe: [],
     imageUrl:
